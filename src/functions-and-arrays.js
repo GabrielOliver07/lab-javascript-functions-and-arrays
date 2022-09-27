@@ -1,25 +1,68 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2) {
+    return num1
+  }
+  return num2
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(array) {
+  if (!array.length) {
+    return null
+  }
+  let longestWord = ''
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].length > longestWord.length) {
+      longestWord = array[i]
+    }
+  }
+  return longestWord
+}
+let result = findLongestWord(words)
+console.log(result)
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(arrayNumbers) {
+  if (!arrayNumbers.length) {
+    return 0
+  }
+  let soma = 0
+  for (let i = 0; i < arrayNumbers.length; i++) {
+    // soma += arrayNumbers[i]
+    soma = soma + arrayNumbers[i]
+  }
+  return soma
+}
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
-
+function sum(array) {
+   if(array.length === 0){
+    return 0
+   }
+   let soma = 0
+   for (let i =0; i < array.length; i++){
+    if(typeof array[i] === "object"){
+      throw new Error("Unsupported data type sir or ma'am")
+    }
+    if(typeof array[i] === "string"){
+      soma = soma + array[i].length
+    } else {
+      soma = soma +array[i]
+    }
+   }
+   return soma 
+ }
 
 
 // Iteration #4: Calculate the average
